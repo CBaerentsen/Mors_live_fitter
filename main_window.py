@@ -307,6 +307,9 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.ui.A_fit.setPlainText("%0.2f, " %params['A_0'] + "%0.2f" %params['A_1'])
             
+            self.ui.r_fit.setPlainText("%0.2f" %params['r'])
+           
+            
             Gamma=params['G_0']*1e3
             Gamma1=params['G_1']*1e3
             self.ui.Gamma_fit.setPlainText("%0.0f, " %Gamma + "%0.0f Hz" %Gamma1)
