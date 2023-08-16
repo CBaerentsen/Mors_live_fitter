@@ -201,6 +201,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 
                     if self.ui.Show_scope.isChecked()==True:
                         self.y_scope = Data.avg_time_trace
+                        self.x_scope = np.linspace(0,Data.time,Data.ns)
                         try:
                             self.scope.setData(self.x_scope,self.y_scope)
                         except:
