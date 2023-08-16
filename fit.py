@@ -174,7 +174,7 @@ class Fit(object):
         p=sum(m*r**(4-m))*S44/F
         return p
     
-    def spinpol3peak(n=0,A_0=0,A_1=0,A_2=0,A_3=0,A_4=0,A_5=0):
+    def spinpol3peak(n=0,A_0=0,A_1=0,A_2=0,A_3=0,A_4=0,A_5=0,A_6=0):
     
         norm = 0
         vec = np.arange(int(n))

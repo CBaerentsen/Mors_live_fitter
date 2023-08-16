@@ -67,7 +67,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
         
         #testing the fitting cababilities
-        # self.x,self.y=testdata()
+        self.x,self.y=testdata()
         
     def daq_updating(self):
         Data.samplerate = self.ui.SamplingRate.value()*1e6
@@ -95,6 +95,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 Data.freq = np.fft.fftfreq(Data.ns, d=1/Data.samplerate)[:int(Data.ns/2)]
             
         except:
+            print("Check if pulses are sent to the DAQ")
             pass
         
     def averaging(self):
@@ -127,7 +128,7 @@ class MainWindow(QtWidgets.QMainWindow):
             QtWidgets.QApplication.desktop().winId()).save(file+".png", 'png')
                
             # Saves the data in an HDF5 file in the current directory 
-            file_name = file + str(datetime.now()).replace(':', '-') + " demod.h5"
+            file_name = file + ".h5"
             with h5py.File(file_name, "w") as f:
                 f["ydata"] = np.array(self.y)
                 f["ydata"].attrs["xmin"] = 0
@@ -307,7 +308,8 @@ class MainWindow(QtWidgets.QMainWindow):
             
             self.ui.A_fit.setPlainText("%0.2f, " %params['A_0'] + "%0.2f" %params['A_1'])
             
-            self.ui.r_fit.setPlainText("%0.2f" %params['r'])
+           
+
            
             
             Gamma=params['G_0']*1e3
