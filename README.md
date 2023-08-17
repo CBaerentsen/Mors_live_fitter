@@ -1,5 +1,3 @@
 # Mors_live_fitter
 
-The script is simulation a confined cesium gas within a square glass cell. 
-
-Read the PhD thesis Generation of non-classical states in a hybrid spin-optomechanical system for details.
+Presents a graphical interface for live analyzing the pumping polarization of a magneto-optical resonance signal, where the signal is digitalized using Spectrum M2 digitizer cards
