@@ -150,7 +150,7 @@ class Fit(object):
             if i<3:
                 model.set_param_hint('G_%d'%i, value=Fit.g, min=0)
             else:
-                model.set_param_hint('G_%d'%i, expr="G_2")
+                model.set_param_hint('G_%d'%i, expr='G_2')
                 
         for i in range(int(Fit.n)):
             model.set_param_hint('A_%d'%i, value=Fit.A*Fit.population(Fit.r,i)/Fit.population(Fit.r,0)*(i+1)**2, min=0)
@@ -178,7 +178,7 @@ class Fit(object):
         p=sum(m*r**(4-m))*S44/F
         return p
     
-    def spinpol3peak(n=0,A_0=0,A_1=0,A_2=0,A_3=0,A_4=0,A_5=0,A_6=0):
+    def spinpol3peak(n=0,A_0=0,A_1=0,A_2=0,A_3=0,A_4=0,A_5=0,A_6=0,A_7=0):
     
         norm = 0
         vec = np.arange(int(n))

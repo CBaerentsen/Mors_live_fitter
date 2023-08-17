@@ -9,7 +9,7 @@ import numpy as np
 from PyQt5 import QtCore
 import time
 from scipy import signal
-from pyspectrumdaq import Card
+# from pyspectrumdaq import Card
 
 class DataCollector(QtCore.QRunnable):
     def __init__(self):

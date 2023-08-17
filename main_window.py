@@ -67,7 +67,7 @@ class MainWindow(QtWidgets.QMainWindow):
         
         
         #testing the fitting cababilities
-        self.x,self.y=testdata()
+        # self.x,self.y=testdata()
         
     def daq_updating(self):
         Data.samplerate = self.ui.SamplingRate.value()*1e6
@@ -365,8 +365,10 @@ def testdata():
         f=np.arange(len(psd))*f_step*1E-3
         return
     path=r'Z:\membrane\atom-membrane\data\2021\09\24\atomic_pol' + "\\"
-
     loaddata(f_step,"mors30.bin",path)
+    Data.PSD = f
+    Data.total_averages = 1
+    Data.angle = psd
     return f, psd
 
 
