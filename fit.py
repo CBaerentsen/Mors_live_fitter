@@ -147,7 +147,9 @@ class Fit(object):
         model.set_param_hint('x0', value=w0)
         model.set_param_hint('d', value=d, vary=True,min=d*0.5,max=d*1.5)
         for i in range(int(Fit.n)):
-            model.set_param_hint('G_%d'%i, value=Fit.g, min=0)
+            if i<3:
+                model.set_param_hint('G_%d'%i, value=Fit.g, min=0)
+                
         for i in range(int(Fit.n)):
             model.set_param_hint('A_%d'%i, value=Fit.A*Fit.population(Fit.r,i)/Fit.population(Fit.r,0)*(i+1)**2, min=0)
         # model.set_param_hint('r', value=Fit.r,min=0,max=1)
