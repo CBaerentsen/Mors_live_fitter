@@ -21,4 +21,4 @@ Run "main_window.py" to start the program. It is important to send triggering pu
   time_trace = Data.adc.acquire()
   Data.ns = int(time_trace.shape[0])
   ""
-      
+    
